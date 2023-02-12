@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 driver = webdriver.Chrome()
-driver.get('https://bstiqrcode.gov.bd/')
+driver.get('bsti url')
 
 time.sleep(1)
 
@@ -26,6 +26,6 @@ with open('data.csv','r') as csv_file:
     csv_reader = csv.reader(csv_file)
 
     for line in csv_reader:
-        driver.get('https://bstiqrcode.gov.bd/process/metrology-verification/add/8EgOciakJoL6iTfKlzpCH5bxfT9AUR7_fckdrqwpxC0')
+        driver.get('verification url')
 
 print("done")
