@@ -1,4 +1,2 @@
-﻿Name,Age,Height
-Nahid,30,170
-Imtiaj ,28,173
-Shezan,31,168
+﻿name,address,memo,receipt,type,brand,capacity,quantity,denomination,weight_class,fee,total,words
+দি মিনা জুয়েলার্স,"বসুন্ধরা সিটি শপিং মল, পান্থপথ, ঢাকা",৩৬.০৫.০০০০.৬০৫.৩১.০০৩.২১,৫৬৭৭৪৩,ডিজিটাল ব্যালান্স স্কেল,Metler,৩০০ গ্রাম,১,,,১০০,১০০,একশত পনেরো টাকা মাত্র
