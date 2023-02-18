@@ -37,18 +37,20 @@ data = pandas.read_csv("data.csv")
 for i,x in data.iterrows():
     capacity = x.capacity.split(',')
     quantity = x.quantity.split(',')
+    quantity_int = [int(item) for item in quantity]
+    total_quantity = sum(quantity_int)
     fees = x.fee.split(',')
     fee_int = [int(item) for item in fees]
     subtotal = sum(fee_int)
     total = math.ceil(sum(fee_int)*1.15)
-    money_instance = Money(total)
+    money_instance = Money(str(total))
     total_in_words = money_instance.in_words()
     time.sleep(1)
     table_row_data=''
     for j,y in enumerate(capacity):
-        table_row_data+=f'<tr style="text-align: center;"><td style="width: 8%;">{j+1}</td><td style="width: 20%;"><p>{x.type}</p><p>ব্রান্ডঃ {"-" if x.brand=="none" else x.brand}</p></td><td style="width: 10%; text-align: center;">{y}</td><td style="width: 10%;">{quantity[j]}</td><td style="width: 15%;">{"-" if x.denomination=="none" else x.denomination}</td><td style="width: 10%;">{"-" if x.weight_class=="none" else x.weight_class}</td><td style="width: 20%;">{fee_int[j]}</td></tr>'
+        table_row_data+=f'<tr style="text-align: center;"><td style="width: 8%;">{En2Bn(str(j+1)).translate()}</td><td style="width: 20%;"><p>{x.type}</p><p>ব্রান্ডঃ {"-" if x.brand=="none" else x.brand}</p></td><td style="width: 10%; text-align: center;">{y}</td><td style="width: 10%;">{quantity[j]}</td><td style="width: 15%;">{"-" if x.denomination=="none" else x.denomination}</td><td style="width: 10%;">{"-" if x.weight_class=="none" else x.weight_class}</td><td style="width: 20%;">{fee_int[j]}</td></tr>'
     time.sleep(1)
-    table_data = f'<p>&nbsp;</p><table style="border-collapse: collapse; width: 100%;" border="1"><tbody><tr style="text-align: center;"><td style="width: 8%;"><strong>ক্রমিক নং</strong></td><td style="width: 20%;"><strong>ওজন/পরিমাপণ ও পরিমাপণ যন্ত্রের বিবরণ</strong></td><td style="width: 10%;"><strong>ওজন/ ধারণক্ষমতা</strong></td><td style="width: 10%;"><strong>সংখ্যা/পরিমাণ</strong></td><td style="width: 15%;"><strong>ওজন/পরিমাপণের ডিনোমিনেশন</strong></td><td style="width: 10%;"><strong>ওজন/পরিমাপণের শ্রেণি</strong></td><td style="width: 20%;"><strong>ভেরিফিকেশন ফি (টাকা)</strong></td></tr>{table_row_data}<tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">মোট</p></td><td style="width: 20%; text-align: center;">{subtotal}</td></tr><tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">১৫% ভ্যাট</p></td><td style="width: 18.0581%; text-align: center;">{math.ceil(sum(fee_int)*0.15)}</td></tr><tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">সর্বমোট</p></td><td style="width: 18.0581%; text-align: center; height: 54px;">{total}</td></tr><tr><td style="width: 93%;" colspan="7"><p style="text-align: left;">{money_instance.words}</p></td></tr></tbody></table>'
+    table_data = f'<p>&nbsp;</p><table style="border-collapse: collapse; width: 100%;" border="1"><tbody><tr style="text-align: center;"><td style="width: 8%;"><strong>ক্রমিক নং</strong></td><td style="width: 20%;"><strong>ওজন/পরিমাপণ ও পরিমাপণ যন্ত্রের বিবরণ</strong></td><td style="width: 10%;"><strong>ওজন/ ধারণক্ষমতা</strong></td><td style="width: 10%;"><strong>সংখ্যা/পরিমাণ</strong></td><td style="width: 15%;"><strong>ওজন/পরিমাপণের ডিনোমিনেশন</strong></td><td style="width: 10%;"><strong>ওজন/পরিমাপণের শ্রেণি</strong></td><td style="width: 20%;"><strong>ভেরিফিকেশন ফি (টাকা)</strong></td></tr>{table_row_data}<tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">মোট</p></td><td style="width: 20%; text-align: center;">{subtotal}</td></tr><tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">১৫% ভ্যাট</p></td><td style="width: 18.0581%; text-align: center;">{math.ceil(sum(fee_int)*0.15)}</td></tr><tr><td style="text-align: center; width: 73%;" colspan="6"><p style="text-align: right;">সর্বমোট</p></td><td style="width: 18.0581%; text-align: center; height: 54px;">{total}</td></tr><tr><td style="width: 93%;" colspan="7"><p style="text-align: left;"><strong><u>কথায়ঃ</u></strong> {money_instance.words} টাকা মাত্র</p></td></tr></tbody></table>'
     driver.get(os.getenv("VERIFICATION_URL"))
     time.sleep(2)
     driver.find_element(By.ID,"memo_no").send_keys(x.memo)
@@ -62,7 +64,7 @@ for i,x in data.iterrows():
     time.sleep(2)
     driver.find_element(By.ID,"varification_address").send_keys(x.address)
     time.sleep(1)
-    driver.find_element(By.ID,"equipment_verification").send_keys(x.quantity)
+    driver.find_element(By.ID,"equipment_verification").send_keys(total_quantity)
     time.sleep(1)
     driver.find_element(By.ID,"receipt_no").send_keys(x.receipt)
     time.sleep(1)
@@ -73,6 +75,6 @@ for i,x in data.iterrows():
     driver.find_element(By.CLASS_NAME,"tox-textarea").send_keys(table_data)
     time.sleep(5)
     driver.find_element(By.CSS_SELECTOR,"body > div.tox.tox-silver-sink.tox-tinymce-aux > div.tox-dialog-wrap > div.tox-dialog.tox-dialog--width-lg > div.tox-dialog__footer > div.tox-dialog__footer-end > button:nth-child(2)").click()
-    time.sleep(2)
+    time.sleep(5)
 
 print('done')
