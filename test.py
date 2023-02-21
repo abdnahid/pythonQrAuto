@@ -45,9 +45,9 @@
 
 # print(new_number)
 from taka import Money
-val = "568941"
+val = "215"
 
 new_money = Money(val)
-new_money.in_words()
-print(new_money.words)
+bn_letter_list = new_money.in_bn_letter()
+print(bn_letter_list)
 

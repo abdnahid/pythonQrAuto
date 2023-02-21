@@ -1,11 +1,17 @@
 import math
-from num_to_bd import num_bd_dict,division_words
+from num_to_bd import num_bd_dict,num_bd_letter_dict,division_words
 
 
 class Money:
     def __init__(self,value) -> None:
         self.number = value
         self.words = ''
+    
+    def in_bn_letter(self):
+        number_list = str(self.number)
+        number_bn_list = [num_bd_letter_dict[i] for i in number_list]
+        number_bn_letter = ''.join(number_bn_list)
+        return number_bn_letter
     def three_digit_enbn(self,three_digits):
         in_words = ''
         in_words += f'{num_bd_dict[three_digits[:-2]]}শত '
