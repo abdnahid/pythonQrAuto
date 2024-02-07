@@ -17,6 +17,7 @@ driver.get(os.getenv("LOGIN_URL"))
 driver.maximize_window()
 word_engine=inflect.engine()
 
+
 time.sleep(0.5)
 
 driver.find_element(By.ID, "user_email").send_keys(os.getenv("LOGIN_EMAIL"))
