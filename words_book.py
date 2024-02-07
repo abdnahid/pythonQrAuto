@@ -1,4 +1,15 @@
+
 division_words = ["হাজার","লক্ষ","কোটি"]
+num_en_list = ["", "One", "Two", "Three", "Four", "Five", "Six",
+"Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen",
+"Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+"Nineteen"]
+
+tens = ["","Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty",
+"Seventy", "Eighty", "Ninety"]
+
+thousands = ["Thousand", "Lacs",'Crores']
+
 num_bd_letter_dict = {
     '0': '০',
     '1': '১',
@@ -113,3 +124,4 @@ num_bd_dict = {
             '98': 'আটানব্বই',
             '99': 'নিরানব্বই'
         }
+
