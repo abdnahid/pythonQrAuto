@@ -116,5 +116,11 @@ for i in insertedData:
     driver.find_element(By.CSS_SELECTOR,"body > div.tox.tox-silver-sink.tox-tinymce-aux > div.tox-dialog-wrap > div.tox-dialog.tox-dialog--width-lg > div.tox-dialog__footer > div.tox-dialog__footer-end > button:nth-child(2)").click()
     driver.find_elements(By.NAME,"stamped_or_reject")[0].click()
     time.sleep(5)
+    driver.find_element(
+        By.CSS_SELECTOR, "#right_side_btn > button.btn.btn-info.cancel"
+    ).click()
+    # driver.find_element(
+    #     By.CSS_SELECTOR, "#right_side_btn > button.btn.btn-primary"
+    # ).click()
 
 print("done")
