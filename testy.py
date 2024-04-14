@@ -2,7 +2,6 @@ import time
 import math
 import pandas
 import os
-from en_words import EnWords
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,7 +13,7 @@ import inflect
 
 load_dotenv()
 
-driver = webdriver.Chrome()
+driver = webdriver.Edge()
 driver.get(os.getenv("LOGIN_URL"))
 driver.maximize_window()
 
@@ -33,7 +32,7 @@ driver.find_element(By.ID, "btnSignIn").click()
 time.sleep(0.5)
 word_engine=inflect.engine()
 
-data = pandas.read_csv("daily.csv")
+data = pandas.read_csv("sara.csv",encoding='windows-1252')
 word_engine=inflect.engine()
 
 insertedData = []
@@ -47,7 +46,7 @@ def insert_company(x:Series)->dict:
             "scales":[
                 {"capacity":x.capacity,"type":x.type,"quantity":x.quantity,"model":x.model if x.model!="none" else "","brand":x.brand if x.brand!="none" else "","serial":x.serial if x.serial!="none" else ""},
             ],
-            "receipt":x.receipt
+            "receipt":str(x.receipt).split(".")[0]
         }
 
 for i,x in data.iterrows():
@@ -58,7 +57,7 @@ for i,x in data.iterrows():
         for index,value in enumerate(insertedData):
             if value["name"]==x["name"] and value["address"]==x["address"]:
                 matched_index=index
-                insertedData[index]["scales"].append({"capacity":x.capacity,"type":x.type,"quantity":x.quantity,"model":x.model if x.model!="none" else "","brand":x.brand if x.brand!="none" else "","serial":x.serial if x.serial!="none" else ""})
+                insertedData[index]["scales"].append({"capacity":x.capacity,"type":x.type,"quantity":x.quantity,"model":x.model if x.model!="none" else "","brand":x.brand if x.brand!="none" else "","serial":str(x.serial).split(".")[0] if x.serial!="none" else ""})
         if matched_index ==None:
             insertedData.append(insert_company(x))
 
@@ -67,19 +66,26 @@ for i in insertedData:
     subtotal = 0
     table_row_data=''
     for j,scale in enumerate(i["scales"]):
-        total_quantity+=scale['quantity']
+        total_quantity+=int(scale['quantity'])
         fee = calc_fee(scale['capacity'])*scale['quantity']
         subtotal+=fee
-        table_row_data+=f'<tr style="text-align: center;"><td style="width: 8%; border: 0.5px solid #000000;">{(j+1)}</td><td style="width: 20%; border: 0.5px solid #000000;"><p>{scale['type']}</p><p>Brand: {"-" if scale['brand']=="none" else scale['brand']}</p></td><td style="width: 10%; text-align: center; border: 0.5px solid #000000;">{f'{int(scale['capacity']*1000)}g' if scale['capacity']<1 else f'{int(scale['capacity'])}kg'}</td><td style="width: 10%; border: 0.5px solid #000000;">{scale['quantity']}</td><td style="width: 15%; border: 0.5px solid #000000;">-</td><td style="width: 10%; border: 0.5px solid #000000;">-</td><td style="width: 20%; border: 0.5px solid #000000;">{fee}</td></tr>'
+        scaleType=f'<strong>Type:</strong> {scale['type']}'  if scale['type']!="" else ""
+        brand=f', <strong>Brand:</strong> {scale['brand']}'  if scale['brand']!="" else ""
+        model=f', <strong>Model:</strong> {scale['model']}'  if scale['model']!="" else ""
+        serial=f', <strong>Serial:</strong> {scale['serial']}'  if scale['serial']!="" else ""
+        
+        table_row_data+=f'<tr style="text-align: center;"><td style="width: 8%; border: 0.5px solid #000000;">{(j+1)}</td><td style="width: 20%; border: 0.5px solid #000000;">{scaleType+brand+model+serial}</td><td style="width: 10%; text-align: center; border: 0.5px solid #000000;">{f'{int(scale['capacity']*1000)}g' if scale['capacity']<1 else f'{int(scale['capacity'])}kg'}</td><td style="width: 10%; border: 0.5px solid #000000;">{int(scale['quantity'])}</td><td style="width: 15%; border: 0.5px solid #000000;">-</td><td style="width: 10%; border: 0.5px solid #000000;">-</td><td style="width: 20%; border: 0.5px solid #000000;">{int(fee)}</td></tr>'
     vat = math.ceil(subtotal*0.15)
-    table_data = f'<p>&nbsp;</p><table style="border-collapse: collapse; width: 100%;" border="1"><tbody><tr style="text-align: center;"><td style="width: 8%; border: 0.5px solid #000000;"><strong>Serial No</strong></td><td style="width: 20%; border: 0.5px solid #000000;"><strong>Description</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Capacity</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Quantity</strong></td><td style="width: 15%; border: 0.5px solid #000000;"><strong>Weight Denomination</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Weight Class</strong></td><td style="width: 20%; border: 0.5px solid #000000;"><strong>Verification Fee (Taka)</strong></td></tr>{table_row_data}<tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">Subtotal</p></td><td style="width: 20%; text-align: center; border: 0.5px solid #000000;">{subtotal}</td></tr><tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">15% VAT</p></td><td style="width: 18.0581%; text-align: center; border: 0.5px solid #000000;">{vat}</td></tr><tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">Total</p></td><td style="width: 18.0581%; text-align: center; height: 54px; border: 0.5px solid #000000;">{vat+subtotal}</td></tr><tr><td style="width: 93%;" colspan="7"><p style="text-align: left;"><strong><u>In Words: </u></strong> {word_engine.number_to_words(vat+subtotal)} taka only</p></td></tr></tbody></table>'
+    table_data = f'<p>&nbsp;</p><table style="border-collapse: collapse; width: 100%;" border="1"><tbody><tr style="text-align: center;"><td style="width: 8%; border: 0.5px solid #000000;"><strong>Serial No</strong></td><td style="width: 20%; border: 0.5px solid #000000;"><strong>Description</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Capacity</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Quantity</strong></td><td style="width: 15%; border: 0.5px solid #000000;"><strong>Weight Denomination</strong></td><td style="width: 10%; border: 0.5px solid #000000;"><strong>Weight Class</strong></td><td style="width: 20%; border: 0.5px solid #000000;"><strong>Verification Fee (Taka)</strong></td></tr>{table_row_data}<tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">Subtotal</p></td><td style="width: 20%; text-align: center; border: 0.5px solid #000000;">{int(subtotal)}</td></tr><tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">15% VAT</p></td><td style="width: 18.0581%; text-align: center; border: 0.5px solid #000000;">{vat}</td></tr><tr><td style="text-align: center; width: 73%; border: 0.5px solid #000000;" colspan="6"><p style="text-align: right;">Total</p></td><td style="width: 18.0581%; text-align: center; height: 54px; border: 0.5px solid #000000;">{int(vat+subtotal)}</td></tr><tr><td style="width: 93%;" colspan="7"><p style="text-align: left;"><strong><u>In Words:</u></strong> {word_engine.number_to_words(int(vat+subtotal))} taka only</p></td></tr></tbody></table>'
     driver.get(os.getenv("VERIFICATION_URL"))
     time.sleep(2)
     driver.find_element(By.ID,"memo_no").send_keys("..605.31.003.21/"+i["name"])
     try:
         company_select_field = driver.find_element(By.XPATH,'//*[@id="company_id"]')
+        time.sleep(5)
         Select(company_select_field).select_by_visible_text(i["name"])
-        time.sleep(2)
+        time.sleep(5)
+
         driver.find_element(By.ID,"verification_date").clear()
         driver.find_element(By.ID,"varification_address").clear()
         driver.find_element(By.ID,"equipment_verification").clear()
@@ -93,7 +99,7 @@ for i in insertedData:
 
     thana = i["thana"] if i["thana"]!="none" else "Select Thana"
     driver.find_element(By.ID,"varification_address").send_keys(i['address'])
-    driver.find_element(By.ID,"verification_date").send_keys("26-03-2023")
+    driver.find_element(By.ID,"verification_date").send_keys("04-04-2024")
     select_district = driver.find_element(By.ID,"verification_district_id")
     Select(select_district).select_by_visible_text(i['district'])
     time.sleep(2)

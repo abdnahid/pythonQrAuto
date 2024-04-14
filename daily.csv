@@ -1,17 +1,96 @@
-name,address,thana,district,type,capacity,quantity,brand,model,serial,receipt
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,0.3,1,MEGA,none,none,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,5,2,MEGA,none,none,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,6,1,TSCALE,none,1W7G22,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,30,3,RFL,none,1W7G23,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,60,4,RFL,none,1W7G24,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,150,2,RFL,none,none,156952
-Mithai-DONIA,"Modina tower,oppsoit of bornomala school,sonir akhra",none,Dhaka,Digital weight scale,600,6,TSCALE,none,none,156952
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,0.6,1,MADINA,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,3,1,"CAS,CAS",none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,35,2,CAS,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,2000,1,CAS,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,1500,2,CAS,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,400,1,MADINA,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,150,2,MADINA,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,150,1,none,none,none,156962
-Mithai-DHOLAIPAR,"East dholaipar,jatrabari",none,Dhaka,Digital weight scale,150,1,MADINA,none,none,156962
+name,address,thana,district,type,capacity,quantity,model,brand,serial,receipt
+Daily Shopping,"H #28, R# Shahajalal Avenue , Sector-04, Uttara",none,Dhaka,Digital Weight Scale,60,1,RLS1100,none,none,350386
+Daily Shopping,"H #28, R# Shahajalal Avenue , Sector-04, Uttara",none,Dhaka,Digital Weight Scale,15,3,RLS1100,none,none,350386
+Daily Shopping,"House-25, Road-13, Nikunja-2, khilkhet",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"House-25, Road-13, Nikunja-2, khilkhet",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"H-17 R-12, Sheikhertek",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"H-17 R-12, Sheikhertek",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"Rajuk Flat Project, Sector-18, Uttara, Diabari",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Rajuk Flat Project, Sector-18, Uttara, Diabari",none,Dhaka,Digital Weight Scale,15,3,none,none,none,350386
+Daily Shopping,"House-17/5 Darus Salam, Mirpur-1",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"House-17/5 Darus Salam, Mirpur-1",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"H-4, Salimuddin Market Road, Ahmmednagar, Mirpur-1",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"H-4, Salimuddin Market Road, Ahmmednagar, Mirpur-1",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"Road#2, Block#B, Eastern Housing, Pallabi, Mirpur",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Road#2, Block#B, Eastern Housing, Pallabi, Mirpur",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"Lake City Concord, Khilkhet",none,Dhaka,Digital Weight Scale,100,1,RLS1100,none,none,350386
+Daily Shopping,"Lake City Concord, Khilkhet",none,Dhaka,Digital Weight Scale,15,1,RLS1100,none,none,350386
+Daily Shopping,"H-232, Opposite PIP gate-4,  Polash Road, Charpara, Polash",none,Narsingdi,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House-33/1, (PIP-4 No Gate), Road No-Palash Chor Bazar road, Palash",none,Narsingdi,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"76 (Ground Floor), Gaosul Azom Avenue, Sector # 13, Uttara Model Town, Uttara",none,Dhaka,Digital Weight Scale,100,1,RLS1100,none,none,350386
+Daily Shopping,"77 (Ground Floor), Gaosul Azom Avenue, Sector # 13, Uttara Model Town, Uttara",none,Dhaka,Digital Weight Scale,15,2,RLS1100,none,none,350386
+Daily Shopping,"House-7,  Road No –16, sector-04, Uttara",none,Dhaka,Digital Weight Scale,100,3,RLS1100,none,none,350386
+Daily Shopping," House 43, Rd No. 8, Banasree L block ",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping," House 43, Rd No. 8, Banasree L block ",none,Dhaka,Digital Weight Scale,60,1,RLS1100,none,none,350386
+Daily Shopping,"Police Station, Advanced Police Town, Savar 1340",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Police Station, Advanced Police Town, Savar 1341",none,Dhaka,Digital Weight Scale,30,1,RLS1100,none,none,350386
+Daily Shopping,"Police Station, Advanced Police Town, Savar 1342",none,Dhaka,Digital Weight Scale,15,1,CL5000,none,none,350386
+Daily Shopping,"House: 32, 1 Kallyanpur Main Rd",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House: 32, 1 Kallyanpur Main Rd",none,Dhaka,Digital Weight Scale,30,1,RLS1100,none,none,350386
+Daily Shopping,"House: 49/1, Gopibagh, R.K mission Road 1203",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House: 524, Shamim Shoroni, West Shewrapara, Mirpur, Dhaka-1216, Near Masud Company",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House.168, 12 Rd No. 5, Mirpur-12",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House- 17, Road- 6, Block B, Banasree",none,Dhaka,Digital Weight Scale,80,1,none,none,none,350386
+Daily Shopping,"House- 17, Road- 6, Block B, Banasree",none,Dhaka,Digital Weight Scale,30,1,RLS1100,none,none,350386
+Daily Shopping,"House- 17, Road- 6, Block B, Banasree",none,Dhaka,Digital Weight Scale,15,1,CL5000,none,none,350386
+Daily Shopping,"House- 46,west Dhanmondi ,Sonkor opposite sonkor zame Mosjid",none,Dhaka,Digital Weight Scale,60,1,RLS1100,none,none,350386
+Daily Shopping,"House- 46,west Dhanmondi ,Sonkor opposite sonkor zame Mosjid",none,Dhaka,Digital Weight Scale,15,1,CL5000,none,none,350386
+Daily Shopping,"H-12 Road-4 , middel badda ,ghudaraghat-2",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"H-12 Road-4 , middel badda ,ghudaraghat-2",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Shop No-01, 353/A, Khilgaon, Road No: 20",none,Dhaka,Digital Weight Scale,30,2,none,none,none,350386
+Daily Shopping,"House#1, Road-17, banasree c block",none,Dhaka,Digital Weight Scale,60,2,none,none,none,350386
+Daily Shopping,"House-6, Road-3/F, Sector-9, Uttara",none,Dhaka,Digital Weight Scale,30,1,RLS1100,none,none,350386
+Daily Shopping,"House-6, Road-3/F, Sector-9, Uttara",none,Dhaka,Digital Weight Scale,60,1,RLS1100,none,none,350386
+Daily Shopping,"House. 8, Rd. 2, Sector-10, Uttara",none,Dhaka,Digital Weight Scale,60,2,none,none,none,350386
+Daily Shopping,"House # 93 South Bashabo, Shobujbagh",none,Dhaka,Digital Weight Scale,200,1,none,none,none,350386
+Daily Shopping,"House # 93 South Bashabo, Shobujbagh",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"LA-53/4, Middle Badda, Post Office Road",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"LA-53/4, Middle Badda, Post Office Road",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Bondhon-16 Flat Owners Association, H-329/B, Avenue Road, Mohanagar Project, West Rampura",none,Dhaka,Digital Weight Scale,60,2,none,none,none,350386
+Daily Shopping,"House. 21, Rd. 13, Sector-14, Uttara",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House. 21, Rd. 13, Sector-14, Uttara",none,Dhaka,Digital Weight Scale,30,1,RLS1100,none,none,350386
+Daily Shopping,"House. 21, Rd. 13, Sector-14, Uttara",none,Dhaka,Digital Weight Scale,15,1,CL5000,none,none,350386
+Daily Shopping,"Ca-63/2 Uttar Badda, Gulsan",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Ca-63/2 Uttar Badda, Gulsan",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Banolota suoer market, BGB gate new",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Banolota suoer market, BGB gate new",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Banolota suoer market, BGB gate new",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Near medical staff quarter mor, Lalbag tower, azimpur",none,Dhaka,Digital Weight Scale,60,2,none,none,none,350386
+Daily Shopping,"69/1, west dhanmondi sankor, Dhanmondi",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"69/1, west dhanmondi sankor, Dhanmondi",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Sher-E Bangla Road, H-224/3, Rayer Bazaar",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"61, Maleka Garden, Gendaria high school",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,Dhaka uddan main road 30/1,none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"House No-147, Shantinagar",none,Dhaka,Digital Weight Scale,200,1,none,none,none,350386
+Daily Shopping,"House No-147, Shantinagar",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House No-147, Shantinagar",none,Dhaka,Digital Weight Scale,30,3,none,none,none,350386
+Daily Shopping,"RFL-10 No Gate, Kazirchor, Danga, Palash",none,Narsingdi,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"27/A Abul Hasnat road,Satrawza Bangshal",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Chorka textile,Near danga bazar",none,Narsingdi,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Kazirchor,Tepola Danga, DIP",none,Narsingdi,Digital Weight Scale,50,1,none,none,none,350386
+Daily Shopping,"House. 15, Rd. 8, Block. G , Niketon, Gulshan",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"House. 15, Rd. 8, Block. G , Niketon, Gulshan",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Banasree A Block, House -13, Road -5",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Banasree A Block, House -13, Road -5",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"12, R#6, Middle Badda, Godaraghat, Gulsan",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"12, R#6, Middle Badda, Godaraghat, Gulsan",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"F -Block, H -2/1, Road 4, banasree -F",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"F -Block, H -2/1, Road 4, banasree -F",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Road -2, F block, House -33, banasree-G-Block",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Road -2, F block, House -33, banasree-G-Block",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"House#1, Main Road, K-Block, South Banasree (Falguni Check)",none,Dhaka,Digital Weight Scale,15,1,none,none,none,350386
+Daily Shopping,"House#1, Main Road, K-Block, South Banasree (Falguni Check)",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Shuchona tower #2, Road-17, Uttar Badda 2",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"Shuchona tower #2, Road-17, Uttar Badda 2",none,Dhaka,Digital Weight Scale,30,2,none,none,none,350386
+Daily Shopping,"H-32, R-12 , DIT Project , Merul Badda",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"H-32, R-12 , DIT Project , Merul Badda",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"House-8, block-B, Main Road, Aftab Nagor",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"House-8, block-B, Main Road, Aftab Nagor",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"Plot# 13&15, Block#C, Jahurul Islam Avenue",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"Plot# 13&15, Block#C, Jahurul Islam Avenue",none,Dhaka,Digital Weight Scale,30,2,none,none,none,350386
+Daily Shopping,"Kha-16, Allatunessa school road, Middle Badda",none,Dhaka,Digital Weight Scale,60,2,none,none,none,350386
+Daily Shopping,"H-85/1/B, Wireless Mor(T&T Office goli), Boro Mogbazar",none,Dhaka,Digital Weight Scale,60,1,none,none,none,350386
+Daily Shopping,"H-85/1/B, Wireless Mor(T&T Office goli), Boro Mogbazar",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"260 Malibag, Malibag Mor",none,Dhaka,Digital Weight Scale,100,1,none,none,none,350386
+Daily Shopping,"260 Malibag, Malibag Mor",none,Dhaka,Digital Weight Scale,30,1,none,none,none,350386
+Daily Shopping,"House-229, Alir Mor, Uttar Badda Shatarkul Road",none,Dhaka,Digital Weight Scale,50,1,none,none,none,350386
