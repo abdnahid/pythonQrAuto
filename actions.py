@@ -61,7 +61,7 @@ def calc_fee_ms(capacity:float)->int:
   else:
     return 1600
     
-def calc_fee(scale_type:str,capacity:int)->int:
+def calc_fee(scale_type:str,capacity:float)->int:
   match scale_type:
     case "dw":
       return calc_fee_ws(capacity=capacity)
@@ -91,3 +91,22 @@ def get_scale_type_bn(scale_type:str)->str:
       return "মিটার স্কেল"
     case "wb":
       return "ইলেকট্রনিক ওয়েব্রীজ স্কেল"
+    
+def calculate_fee(capacity, type_, quantity):
+    match type_:
+        case 'dw':
+            return calc_fee_ws(capacity=capacity)*quantity
+        case 'mb':
+            match capacity:
+                case 5:
+                    return 200
+                case 10:
+                    return 500
+        case 'lm':
+            match capacity:
+                case 1:
+                    return 100
+                case 2:
+                    return 200
+        case _:
+            return 0  # Default fee if no conditions are met

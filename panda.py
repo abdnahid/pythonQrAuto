@@ -31,7 +31,7 @@ driver.find_element(By.ID, "btnSignIn").click()
 
 time.sleep(0.5)
 
-data = pandas.read_csv("ag.csv")
+data = pandas.read_csv("mithai.csv")
 
 insertedData = []
 scale_types = ["dw","ms","lm","wb"]
@@ -66,7 +66,7 @@ for i in insertedData:
     table_row_data=''
     for j,scale in enumerate(i["scales"]):
         total_quantity+=int(scale['quantity'])
-        fee = 300*scale['quantity']
+        fee = calc_fee(scale_type=scale['type'],capacity=float(scale['capacity']))*int(scale['quantity'])
         subtotal+=fee
         scaleType=f'<strong>Type:</strong> {get_scale_type_bn(scale_type=scale['type'])}'  if scale['type'] in scale_types else ""
         brand=f', <strong>Brand:</strong> {scale['brand']}'  if scale['brand']!="none" else ""
@@ -98,7 +98,7 @@ for i in insertedData:
 
     thana = i["thana"] if i["thana"]!="none" else "Select Thana"
     driver.find_element(By.ID,"varification_address").send_keys(i['address'])
-    driver.find_element(By.ID,"verification_date").send_keys("15-09-2024")
+    driver.find_element(By.ID,"verification_date").send_keys("19-11-2024")
     select_district = driver.find_element(By.ID,"verification_district_id")
     Select(select_district).select_by_visible_text(i['district'])
     time.sleep(2)
@@ -121,9 +121,9 @@ for i in insertedData:
     driver.find_element(By.CSS_SELECTOR,"body > div.tox.tox-silver-sink.tox-tinymce-aux > div.tox-dialog-wrap > div.tox-dialog.tox-dialog--width-lg > div.tox-dialog__footer > div.tox-dialog__footer-end > button:nth-child(2)").click()
     driver.find_elements(By.NAME,"stamped_or_reject")[0].click()
     time.sleep(5)
-    # driver.find_element(
-    #     By.CSS_SELECTOR, "#right_side_btn > button.btn.btn-info.cancel"
-    # ).click()
+    driver.find_element(
+        By.CSS_SELECTOR, "#right_side_btn > button.btn.btn-info.cancel"
+    ).click()
     # driver.find_element(
     #     By.CSS_SELECTOR, "#right_side_btn > button.btn.btn-primary"
     # ).click()
